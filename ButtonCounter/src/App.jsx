@@ -28,7 +28,7 @@ function App() {
   const minusvalue = () => {
     if (counter <= 0) {
       alert("value cannot be negative")
-      counter = 0;
+      counter = 1;
     }
 
     setCounter(counter - 1)
