@@ -5,14 +5,15 @@ import useCurrencyInfo from './hooks/UseCurrencyInfo';
 
 
 function App() {
-  const [amount, setAmount] = useState(0)
-  const [from, setFrom] = useState("usd")
-  const [to, setTo] = useState("inr")
+  const [amount, setAmount] = useState()
+  const [from, setFrom] = useState("inr")
+  const [to, setTo] = useState("usd")
   const [convertedAmount, setConvertedAmount] = useState("");
 
   const currencyInfo = useCurrencyInfo(from)
 
-  const options = Object.keys(currencyInfo)
+  const options = currencyInfo ? Object.keys(currencyInfo) : [];
+  // const options = Object.keys(currencyInfo)
 
   const swap = () => {
     setFrom(to)
@@ -35,6 +36,8 @@ function App() {
     >
       <div className="w-full">
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+          <h1 className='text-3xl text-center mb-5 text-white font-semibold'>Currency Convertor</h1>
+
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -76,7 +79,7 @@ function App() {
               />
             </div>
             <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
-              Convert {from.toUpperCase()} to {to.toUpperCase()}
+              Convert {from.toUpperCase()} to {to.toUpperCase()} = {convertedAmount}
             </button>
           </form>
         </div>
