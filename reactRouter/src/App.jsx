@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import './App.css'
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
+import Home from './Home/Home';
 
 
 function App() {
@@ -7,7 +10,8 @@ function App() {
 
   return (
     <>
-      <h1 className='bg-red-500 p-5 text-3xl text-white rounded-lg'>Chai Aur React - React Router series</h1>
+     
+    
     </>
   )
 }
