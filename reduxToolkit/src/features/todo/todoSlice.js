@@ -24,7 +24,16 @@ export const todoSlice = createSlice({
             state.todos = state.todos.filter(() => todo.id !== action.payload)
         },
 
-        //update todo i have to do for revision------
+        //----------  update todo i have to do for revision  ------
+
+
 
     }
+
+
 })
+
+
+export const {addTodo , removeTodo} = todoSlice.actions
+
+export default todoSlice.reducer
