@@ -4,7 +4,7 @@ import { Client, ID, Databases, Storage, Query } from "appwrite";
 export class Service {
     client = new Client();
     databases;
-    bucket; //storage
+    bucket; // it is storage only , but we call it bucket in this project.
 
     constructor() {
         this.client
