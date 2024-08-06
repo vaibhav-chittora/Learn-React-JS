@@ -9,11 +9,35 @@ function App() {
 
       <h1>Cahi aur react</h1>
       <Chai />
-      <Button text={'Submit'} buttonType={'submit'} buttonStyle={}/>
-      <Button text={'Click Me'} buttonType={'reset'}/>
-      <Button text ={'Btn'}/>
-     
-     
+      <Button
+        text={'Danger'}
+        buttonType={'submit'}
+        buttonStyle='dangerBtn' 
+        onclickHandler={() => {
+          console.log('Danger Button Clicked');
+        }}
+      />
+
+      <Button
+        text={'Success'}
+        buttonType={'reset'}
+        buttonStyle='successBtn'
+        onclickHandler={()=>{
+          console.log("Success Btn Clicked");
+        }}
+      />
+      <Button
+        text={'Warning'}
+        buttonStyle="warningBtn"
+        onclickHandler={()=>{
+        console.log(  "Warning Btn Clicked");
+        }}
+      />
+      <Button onclickHandler={()=>{
+        console.log("Default Btn Clicked");
+      }} />
+
+
     </>
   )
 }
