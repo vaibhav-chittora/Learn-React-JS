@@ -1,9 +1,10 @@
 import { useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react'
 import './App.css'
-import { authService } from './appwrite/auth';
+import  authService from './appwrite/auth';
 import { login, logout } from './store/authSlice';
-import { Footer } from './components';
+import {Footer} from './components/index';
+import {Header} from './components/index';
 import { Outlet } from 'react-router-dom';
 
 
@@ -11,7 +12,7 @@ import { Outlet } from 'react-router-dom';
 function App() {
 
   const [loading, setLoading] = useState(true);
-  const [dispatch] = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     authService.getCurrentUser()
@@ -34,7 +35,7 @@ function App() {
       <Header/>
       <main>
 
-        TODO : {/* <Outlet/> */}
+         <Outlet/>
       </main>
       <Footer/>
 
